@@ -1,0 +1,75 @@
+/*------------------------------------*\
+$LOADING
+\*------------------------------------*/
+#form {
+    position: relative; 
+}
+.success-msg {
+    text-align: right;
+}
+.input-group.message {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+.bubbles {
+    display: none;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    z-index: $level3;
+    @include center;
+    .content__bubbles {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        border-radius: 50%;
+        animation: bubbly .9s infinite alternate;
+        &.bubble2 { 
+            animation-delay: .27s; 
+        }
+        &.bubble3 { 
+            animation-delay: .54s; 
+        }
+    }
+}
+
+/* Bubbles */
+
+@-webkit-keyframes bubbly {
+    0% {
+        width: 15px;
+        height: 15px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+        opacity: 0.1;
+        transform: translateY(-32px);
+    }
+}
+
+@-moz-keyframes bubbly {
+    0% {
+        width: 15px;
+        height: 15px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+        opacity: 0.1;
+        transform: translateY(-32px);
+    }
+}

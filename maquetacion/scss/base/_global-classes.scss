@@ -1,0 +1,39 @@
+.wrap {
+	margin: auto;
+	max-width: cr(1280px);
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+    &.wrap--full {
+        @include respond-to(tablet) {
+            padding: 0;
+        }
+        @include respond-to(desktop) {
+            padding: 0 50px;
+        }
+    }
+    &.wrap--full-desk {
+            padding: 0;
+    }
+    &::after {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+    @include respond-to(tablet) {
+        padding: 0 30px;
+    }
+    @include respond-to(desktop) {
+        padding: 0 50px;
+    }
+    &.wrap--single {
+        max-width: 780px;
+    }
+}
+.no-mobile {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+    }
+}

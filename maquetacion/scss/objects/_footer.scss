@@ -1,0 +1,280 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    position: relative;
+    margin-top: -267px;
+    background: white;
+    @include respond-to(tablet) {
+        height: 210px;
+        margin-top: -200px;
+        overflow: hidden;
+    }
+    /*redes sociales*/
+    .full-box {
+        width: 100%;
+        &.redes--foo {
+            display: flex;
+            height: 48px;
+            .four-cols {
+                flex: 1;
+                padding: 15px 0 15px 15px;
+                position: relative;
+                overflow: hidden;
+                &::after {
+                    content: '';
+                    display: block;
+                    float: none;
+                    clear: both;
+                }
+                img {
+                    display: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    z-index: $level1;
+                    transform: translate(0,-50%);
+                }
+                .rss-conten {
+                    z-index: $level2;
+                }
+                .icon {
+                    max-height: 24px;
+                    max-width: 24px;
+                    display: block;
+                    float: left;
+                    margin-right: 10px;
+                    svg {
+                        max-height: 24px;
+                        max-width: 24px;
+                        fill: white;
+                    }
+                }
+                &.facebook {
+                    background: #2B58A1;
+                }
+                &.twitter {
+                    background: #55B0F5;
+                }
+                &.linkedin {
+                    background: #0077B6;
+                }
+                &.youtube {
+                    background: #EF5454;
+                }
+                .text-rss {
+                    display: none;
+                    color: white;
+                }
+            }
+            @include respond-to(tablet) {
+                height: 70px;
+                .four-cols {
+                    padding-top: 36px;
+                    padding-bottom: 0; 
+                    img {
+                        display: block;
+                        opacity: .1;
+                    }
+                    .text-rss {
+                        display: block;
+                        padding-top: 11px;
+                    }
+                }
+            }
+        }
+    }
+    /*newsletter*/
+    .box--left__foo {
+        position: relative;
+        border-bottom: 1px solid $gray;
+        padding: 20px 0 10px;
+        .formulario {
+            padding: 0;
+            .formulario__item {
+                padding: 0;
+                .input-group {
+                    width: 100%;
+                    margin-bottom: 5px;
+                    @include less-than(tablet) {
+                        width: calc(100% - 86px);
+                        float: left;
+                        padding-right: 10px;
+                    }
+                    @include respond-to(tablet) {
+                        width: 80%;
+                        float: left;
+                        padding-right: 5%;
+                        padding-left: 0;
+                    }
+                    label {
+                        font-size: cr(14px);
+                        margin-bottom: 5px;
+                        display: block;
+                        font-family: 'Varela Round', sans-serif; 
+                        width: 100%;
+                        padding: 0;
+                        @include respond-to(tablet) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                    input {
+                        height: 30px;
+                        background: $separador;
+                        border-radius: 5px;
+                        font-family: 'Abel', sans-serif;
+                        letter-spacing: 0.8px;
+                        padding: 0;
+                        transition: all 300ms;
+                        border-radius: 5px;
+                        padding: 0 10px;
+                        line-height: cr(30px);
+                        border: none;
+                        &:focus {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                .send-group {
+                    width: 76px;
+                    height: 34px;
+                    float: right;
+                    border-radius: 5px;
+                    border: 2px solid $separador;
+                    text-align: center;
+                    overflow: hidden;
+                    font-size: cr(14px);
+                    @include less-than(tablet) {
+                        margin-top: 23px;
+                    }
+                    input {
+                        height: 30px;
+                        background-color: transparent;
+                        line-height: cr(30px);
+                        padding: 0;
+                        &:hover {
+                            background: $separador;
+                            color: white;
+                        }
+                    }
+                    @include respond-to(tablet) {
+                        width: 20%;
+                        float: right;
+                        margin-top: 23px;
+                    }
+                    @include respond-to(desktop) {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+        @include respond-to(tablet) {
+            position: absolute;
+            right: 0;
+            bottom: 55px;
+            border-bottom: none;
+            width: 350px;
+            padding: 0 30px 0 0;
+            .input-group {
+            }
+        }
+        @include respond-to(desktop) {
+            width: 40%;
+            float: right;
+            position: relative;
+            bottom: auto;
+            right: auto;
+            margin-top: 33px;
+            padding-left: 20px;
+            padding-right: 0;
+        }
+    }
+    /*Menu*/
+    .box--right__foo {
+        padding-top: 10px;
+        @include respond-to(desktop) {
+            position: relative;
+        }
+        .logo-foo {
+            width: 260px;
+            margin: auto;
+            margin-bottom: 20px;
+            svg {
+                .texto-logo {
+                    @include less-than(tablet) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .menu-foo {
+            display: none;
+            a {
+                flex: auto;
+                font-size: cr(12px);
+                font-family: 'Abel', sans-serif;
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                color: $principal;
+            }
+        }
+        .text-foo {
+            font-size: cr(12px);
+            padding-bottom: 5px;
+        }
+        @include respond-to(tablet) {
+            .logo-foo {
+                width: 245px;
+                margin-left: 0;
+                margin-bottom: 5px;
+            }
+            .menu-foo {
+                width: 340px;
+                display: flex;
+            }
+            .text-foo {
+                border-top: 1px solid $gray;
+                margin-top: 5px;
+                padding-top: 5px;
+            }
+        }
+        @include respond-to(desktop) {
+            width: 60%;
+            float: left;
+        }
+    }
+    .byreactor {
+        color: rgba($separador-dark, .7);
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 10px;
+        font-size: cr(12px);
+        line-height: cr(20px);
+        @include respond-to(tablet) {
+            position: absolute;
+            width: 110px;
+            right: 25px;
+            bottom: -5px;
+        }
+        @include respond-to(desktop) {
+            opacity: .5;
+            transition: all 300ms;
+            top: auto;
+            bottom: 0;
+            right: -5px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        svg {
+            width: 13px;
+            height: 13px;
+            margin-right: 5px;
+            stroke: $separador-dark;
+            fill: transparent;
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Archivos de projecto de sublime #
+*.sublime-project
+*.sublime-workspace
+
+# cache de sass dentro del tema y la maquetación #
+maquetacion/scss/.sass-cache/
+
+
+# Cache de codekit #
+config.codekit
+
+# Descargas de NPM #
+node_modules
+
+# Carpetas de Wordpress que no necesitamos #
+wordpress/assets/upgrade/
+wordpress/assets/uploads/
+wordpress/assets/plugins/duplicate-post/
+wordpress/assets/backup-db/
+wordpress/assets/advanced-cache.php
+wordpress/assets/wp-cache-config.php
+wordpress/assets/blogs.dir/
+wordpress/assets/themes/redbionova/bower_components/
+*.log
+wordpress/assets/cache/
+wordpress/assets/backups/
+wordpress/sitemap.xml.gz
+wordpress/wp-include
+wordpress/wp-admin
+wordpress/index.php
+wordpress/license.txt
+wordpress/readme.html
+wordpress/wp-activate.php
+wordpress/wp-blog-header.php
+wordpress/wp-comments-post.php
+wordpress/wp-config-sample.php
+wordpress/wp-config.php
+wordpress/.htaccess
+wordpress/wp-cron.php
+wordpress/wp-includes/
+wordpress/wp-links-opml.php
+wordpress/wp-load.php
+wordpress/wp-login.php
+wordpress/wp-mail.php
+wordpress/wp-settings.php
+wordpress/wp-signup.php
+wordpress/wp-trackback.php
+wordpress/xmlrpc.php
+
+
+# Configuración de ambiente local de desarrollo #
+
+config/env/
+/nbproject/
+/wordpress/assets/themes/redbionova/assets/
+/wordpress/assets/themes/redbionova/bower_components/
+/wordpress/assets/plugins/wordpress-importer/

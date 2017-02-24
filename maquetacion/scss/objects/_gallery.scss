@@ -1,0 +1,156 @@
+/*------------------------------------*\
+$GALLERY
+\*------------------------------------*/
+.events__single__gallery {
+    transition: all 300ms;
+    &.slider--fullscreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $claro;
+        z-index: $level11;
+        .slider__gallery { 
+            width: 72%;
+            float: left;
+            .slides {
+                width: 100%;
+                height: 100%;
+                li {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        width: 100%;
+                        @include center;
+                        min-height: 0;
+                    }
+                }
+            }
+        }
+        .gallery__content {
+            border-top: 1px solid #53636e;
+            border-bottom: 1px solid #53636e;
+            width: 28%;
+            float: left;
+            height: 100%;
+            .gallery__desc {
+                width: 100%;
+                .gallery__text {
+                    float: none;
+                    width: 100%;
+                }
+                .gallery__number {
+                    clear: both;
+                    float: none;
+                }
+            }
+        }
+    }/*&.slider--fullscreen*/
+    .slider__gallery {
+        transition: all 300ms;
+        .slides {
+            li {
+                height: 225px;
+                @include respond-to(tablet) {
+                    height: 490px;
+                }
+                img {
+                    min-height: 100%;
+                }
+            }
+        }/*.slides*/
+    }/*.slider__gallery*/
+    .gallery__content {
+        padding: 0 15px 40px;
+        background: white;
+        border-bottom: 1px solid $biotech-tonic;
+        position: relative;
+        transition: all 300ms;
+    }/*.gallery__content*/
+    .gallery__controls {
+        display: block;
+        padding: 10px 0 20px;
+        width: 160px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        .gallery__controls__content {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            width: 140px;
+            float: right;
+            svg {
+                opacity: .3;
+                fill: $secundario;
+                &:hover {
+                    opacity: 1;
+                    fill: $biotech-tonic;
+                }
+            }
+        }/*.gallery__controls__content*/
+        .gallery__fullscreen {
+            width: 50px;
+            padding-right: 20px;
+            border-right: 2px solid $biotech-tonic;
+            display: none;
+            cursor: pointer;
+            @include respond-to(desktop) {
+                display: block;
+            }
+            svg {
+                width: 29px;
+                height: 29px;
+            }
+        }/*.gallery__fullscreen*/
+        .custom-controls-container {
+            width: 87px;
+        }
+        .flex-direction-nav {
+            display: block;
+            width: 87px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            li {
+                width: 17px;
+                height: 30px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }/*.flex-direction-nav*/
+    }/*.gallery__controls*/
+    .gallery__desc {
+        max-width: 440px;
+        .gallery__number {
+            height: 60px;
+            width: 60px;
+            padding: 10px 0 20px;
+            line-height: cr(30px);
+            @include respond-to(tablet) {
+                float: left;
+            }
+            span {
+                margin-right: 5px;
+                &:last-child {
+                    color: $secundario;
+                }
+            }
+        }/*.gallery__number*/
+        .gallery__text {
+            width: 100%;
+            padding: 0;
+            @include respond-to(tablet) {
+                padding: 14px 15px 20px;
+                width: 380px;
+                float: left;
+            }
+        }/*.gallery__text*/
+    }/*.gallery__desc */
+}/*.events__single__gallery */

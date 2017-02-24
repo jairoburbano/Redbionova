@@ -1,0 +1,497 @@
+/*------------------------------------*\
+$EVENTS
+\*------------------------------------*/
+.events {
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+    &.events--no-sidebar {
+        padding-top: 30px;
+    }
+}
+// Sidebar
+.events__sidebar {
+    width: 350px;
+    float: left;
+    display: none;
+    @include respond-to(desktop) {
+        display: block;
+    }
+}
+.events__sidebar__block {
+    margin-bottom: 25px;
+}
+.events__sidebar__title {
+    margin-bottom: 22px;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    color: color(eventos, $categories);
+    line-height: 30px;
+    @include font-size(22px);
+}
+.events__sidebar__list {
+    padding-top: 25px;
+    border-top: 1px solid rgba($principal, .6);
+    a {
+        margin: 8px 0;
+        color: $principal;
+        line-height: 20px;
+        display: block;
+        @include font-size(16px);
+    }
+}
+.events__content {
+    width: 100%;
+    @include respond-to(desktop) {
+        padding-top: 81px;
+        padding-left: 50px;
+        width: calc(100% - 350px);
+        float: right;
+    }
+    h3 {
+        @include font-size(22px);
+        line-height: cr(17px);
+        margin-bottom: 40px;
+        padding: 0;
+        color: $eventos;
+        @include respond-to(tablet) {
+            line-height: cr(30px);
+            margin-bottom: 30px;
+        }
+    }
+    a {
+        color: $principal;
+    }
+    &.events__content--full {
+        @include respond-to(tablet) {
+            padding-top: 0;
+            padding-left: 0;
+            width: 100%;
+            float: none;
+        }
+        @include respond-to(desktop) {
+            max-width: 870px;
+            margin: auto;
+            .events__item {
+                position: relative;
+                width: 650px;
+                float: right;
+            }
+        }
+    }
+    &.events__content--single {
+        .events__item {
+            @include less-than(tablet) {
+                padding-top: 140px;
+            }
+            @include less-than(desktop) {
+                padding-top: 195px;
+            }
+            @include respond-to(desktop) {
+                margin-bottom: 0;
+                margin-top: 60px;
+                &:last-child {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+        .events__item__image--special {
+            @include less-than(tablet) {
+                display: block;
+                height: 120px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+            @include less-than(desktop) {
+                height: 175px;
+            }
+            @include respond-to(tablet) {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: block;
+                overflow: hidden;
+            }
+            @include respond-to(desktop) {
+                display: block;
+                position: absolute;
+                width: 220px;
+                height: 170px;
+                left: -222px;
+                top: 0;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .events__item__date {
+            @include less-than(tablet) {
+                position: relative;
+                left: auto;
+                top: auto;
+            }
+            @include less-than(desktop) {
+                position: absolute;
+                top: (175px - 76/2);
+                left: 15px;
+            }
+        }
+    }
+}
+.events__item__image--special {
+    display: none;
+    @include respond-to(desktop) {
+        display: block;
+        position: absolute;
+        width: 220px;
+        height: 170px;
+        left: -222px;
+        top: -2px;
+    }
+    img {
+        width: 100%;
+    }
+}
+.events__desc {
+    color: $secundario;
+    margin-bottom: 20px;
+    @include font-size(14px);
+    line-height: cr(22px);
+    p {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.events__item {
+    margin-bottom: 60px;
+    background: white;
+    position: relative;
+    box-shadow: 0px 3px 10px 1px rgba(211, 211, 211, 0.75);
+    padding: 45px 20px 24px;
+}
+.events__item__date {
+    position: absolute;
+    left: 15px;
+    top: -30px;
+    text-align: center;
+    color: white;
+    @include font-size(12px);
+}
+.events__item__date--start, .events__item__date--end, .events__item__date--single, .events__item__date--year {
+    padding: 6px 5px;
+    float: left;
+    height: 61px;
+    width: 76px;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+}
+.events__item__date--year {
+    @include font-size(30px);
+    line-height: cr(52px);
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+}
+.events__item__date--day {
+    line-height: 30px;
+    @include font-size(22px);
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+}
+.events__item__date--month {
+    line-height: 22px;
+    display: block;
+    @include font-size(16px);
+    margin-top: -6px;
+}
+.events__title {
+    line-height: 24px;
+    font-weight: 700;
+    @include font-size(20px);
+}
+.events__item__meta {
+    color: $secundario;
+    p {
+        color: $secundario;
+        line-height: 24px;
+        @include font-size(14px);
+    }
+    &.events__item__meta__content {
+        display: flex;
+        flex-flow: row wrap;
+        @include font-size(16px);
+        @include respond-to(tablet) {
+            width: 380px;
+            float: left;
+        }
+        .events__item__meta__item {
+            width: 50%;
+            @include font-size(14px);
+            @include respond-to(tablet) {
+                width: 33%;
+            }
+            .events__item__meta__title {
+                font-family: 'Abel', sans-serif;
+                letter-spacing: 0.8px;
+                color: $principal;
+            }
+            a {
+                color: $biotech-tonic;
+            }
+        }
+    }
+}
+.events__btn {
+    width: 100px;
+    color: $principal;
+    padding: 0;
+    text-align: center;
+    margin: 15px 0 0;
+    @include respond-to(tablet) {
+        float: right;
+    }
+}
+.events__sponsors {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    &.event__sponsors--single {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .events__sponsors__title {
+        display: block;
+        margin-bottom: 10px;
+        @include less-than(tablet) {
+            @include font-size(14px);
+            line-height: cr(24px);
+        }
+    }/*.events__sponsors__title*/
+    .events__sponsors__content {
+        display: flex;
+        flex-flow: row wrap;
+        @include respond-to(tablet) {
+            margin: 0 15px 0 15px; 
+        }
+        .events__sponsors__item {
+            width: 100px;
+            height: 66px;
+            border: 1px solid $gray;
+            margin: 3px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+// Single
+.events__single__header--normal {
+    .events__single__date {
+        width: 100%;
+        @include respond-to(tablet) {
+            width: 75px;
+        }
+        .events__item__date--year {
+            font-weight: bold;
+            @include respond-to(tablet) {
+                height: 28px;
+                @include font-size(18px);
+                line-height: cr(28px);
+                margin-bottom: 1px;
+            }
+            @include respond-to(desktop) {
+                position: relative;
+                left: auto;
+            }
+        }
+        .events__item__date--end {
+            float: left;
+            @include respond-to(tablet) {
+                float: right;
+            }
+        }
+    }
+    .events__single__title {
+        @include respond-to(tablet) {
+            width: calc(100% - 75px);
+        }
+    }
+    .events__single__meta { 
+        @include respond-to(tablet) {
+            width: calc(100% - 150px);
+        }
+    }
+}
+.events__single__title {
+    width: 100%;
+    font-weight: 700;
+    color: $principal;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+    padding-bottom: 0;
+    @include font-size(24px);
+    @include respond-to(tablet) {
+        @include font-size(24px);
+        line-height: 30px;
+        @include font-size(30px);
+        width: calc(100% - 75px);
+        padding-left: 20px;
+        float: right;
+    }
+    a {
+        color: $principal;
+    }
+}
+.events__single__meta {
+    width: 100%;
+    margin-top: 10px;
+    color: #777;
+    line-height: 22px;
+    @include font-size(14px);
+    @include respond-to(tablet) {
+        width: calc(100% - 75px);
+        padding-left: 20px;
+        float: right;
+    }
+}
+.events__single__date {
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 75px;
+    padding-top: 10px;
+    display: block;
+    width: 75px;
+    width: auto;
+    margin-bottom: 10px;
+    padding-top: 0;
+    width: 75px;
+    height: auto;
+    float: left;
+    position: relative;
+    @include respond-to(tablet) {
+        float: left;
+        margin-bottom: 0;
+    }
+    .events__item__date--year {
+        height: 75px;
+        width: 75px;
+        padding: 0;
+        text-align: center;
+        line-height: cr(75px);
+        @include respond-to(desktop) {
+            position: absolute;
+            left: -75px;
+        }
+    }
+    .events__item__date--start, .events__item__date--end {
+        width: 75px;
+        height: 75px;
+        padding-top: 15px;
+    }
+}
+.events__item__date--day {
+    @include font-size(34px);
+}
+.events__single__info {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: white;
+    position: relative;
+    box-shadow: 0px 3px 10px 1px rgba(211, 211, 211, 0.75);	
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+    p {
+        line-height: 20px;
+        @include font-size(16px);
+        @include respond-to(tablet) {
+            padding-right: 120px;
+        }
+    }
+}
+.events__content--max-width {
+    max-width: 650px;
+    margin: auto;
+}
+.events__single__content {
+    padding-top: 15px;
+    color: $secundario;
+    margin-bottom: 25px;
+    @include font-size(14px);
+    font-family: 'Varela Round', sans-serif;
+    p {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.events__single--biotech {
+    padding-top: 20px;
+    .events__single__box {
+        width: 100%;
+        position: relative;
+    }
+    .events__single__meta {
+        width: calc(100% - 75px);
+        float: left;
+        padding-left: 15px;
+    }
+    .events__single__title {
+        padding-left: 90px;
+        @include respond-to(tablet) {
+            padding-left: 20px;
+        }
+    }
+    .events__single__info {
+        @include respond-to(tablet) {
+            padding-right: 200px;
+        }
+        p {
+            display: none;
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+    }
+    .btn--single-events {
+        width: 160px;
+        padding: 0 10px;
+        @include font-size(14px);
+    }
+    .events__single__program {
+        color: $secundario;
+        margin-bottom: 30px;
+        h2 {
+            color: $biotech-tonic;
+            @include font-size(22px);
+        }
+        .events__single__program__item {
+            border-bottom: 1px solid $gray;
+            padding: 15px 0;
+            @include font-size(14px);
+            line-height: cr(20px);
+            &:last-child {
+                border-bottom: none;
+            }
+            span {
+                width: calc(100% - 100px);
+                float: right;
+                &:first-child {
+                    width: 100px;
+                    display: block;
+                    float: left;
+                }
+            }
+        }
+    }
+}

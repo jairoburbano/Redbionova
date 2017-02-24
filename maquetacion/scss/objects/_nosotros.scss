@@ -1,0 +1,174 @@
+/*------------------------------------*\
+$NOSOTROS
+\*------------------------------------*/
+.green-content {
+    padding: 30px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    @include respond-to(wide) {
+        padding: 120px 0 70px;
+    }
+    h2 {
+        color: white;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: $corporativo;
+        opacity: 1;
+        @include respond-to(tablet) {
+            opacity: .7;
+        }
+    }
+    .wrap {
+        @include respond-to(desktop) {
+            max-width: 900px;
+            margin: auto;
+        }
+    }
+    .block {
+        z-index: 2;
+        position: relative;
+        @include respond-to(tablet) {
+            width: 50%;
+            float: left;
+            text-align: left;
+            padding: 0 20px 80px 0;
+        }
+        .secondary-title {
+            color: white;
+            padding: 0 0 10px;
+            @include respond-to(tablet) {
+                text-align: left;
+                padding: 30px 0 10px;
+            }
+        }
+        .content {
+            color: white;
+        }
+    }
+}/*.green-content*/
+.block {
+    padding: 0 0 80px;
+    text-align: center;
+    max-width: 610px;
+    margin: auto;
+    @include respond-to(desktop) {
+        max-width: 800px;
+    }
+    &:nth-child(2) {
+        padding-bottom: 10px;
+    }
+    .content {
+        color: $secundario;
+        @include font-size(14px);
+        line-height: cr(22px);
+        p {
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}/*.block*/
+.team--container {
+    padding-top: 30px;
+    h2 {
+        text-align: center;
+    }
+}
+.content-team {
+    text-align: center;
+    padding-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .team {
+        width: 100%;
+        position: relative;
+        min-height: 120px;
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: 50%;
+            margin-bottom: 40px;
+        }
+        @include respond-to(desktop) {
+            width: 25%;
+        }
+        &:nth-child(2n) {
+            .team__image {
+                background: url(../img/team-02.svg);
+                background-size: cover;
+            }
+        }
+        .team__image {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url(../img/team-01.svg);
+            background-size: cover;
+            @include respond-to(tablet) {
+                position: relative;
+                left: auto;
+                top: auto;
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;
+                margin: auto;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }/*.team__image*/
+        .team__text {
+            text-align: left;
+            line-height: cr(20px);
+            color: $secundario;
+            padding: 30px 0 0 130px;
+            @include respond-to(tablet) {
+                padding: 25px 0 0;
+                text-align: center;
+            }
+            .team__text__name {
+                @include font-size(20px);
+                line-height: cr(24px);
+                color: $principal;
+                padding-bottom: 0;
+            }
+        }/*.team__text*/
+        .team__rss {
+            width: 30px;
+            height: 30px;
+            background: $linkedin;
+            border-radius: 5px;
+            overflow: hidden;
+            display: block;
+            transition: all 300ms;
+            margin-top: 10px;
+            @include respond-to(tablet) {
+                margin: 10px auto 0;
+            }
+            &:hover {
+                background: lighten($linkedin, 10);
+            }
+            svg {
+                width: 22px;
+                height: 22px;
+                margin: 4px;
+                fill: white;
+            }
+        }/*.team__rss*/
+    }
+}/*.content-team*/

@@ -1,0 +1,64 @@
+/*------------------------------------*\
+$INSTITUCIONES
+\*------------------------------------*/
+.item__simple {
+    width: 100%;
+    position: relative;
+    min-height: 110px;
+    padding: 20px 0;
+    border-top: 1px solid $gray;
+    @include respond-to(tablet) {
+        width: 50%;
+        float: left;
+        &:nth-child(2n) {
+            clear: right;
+        }
+    }
+    @include respond-to(desktop) {
+        width: 33%;
+        &:nth-child(2n) {
+            clear: none;
+        }
+        &:nth-child(3n + 1) {
+            clear: left;
+        }
+    }
+    .item__simple__image {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 110px;
+        height: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }/*.item__simple__image*/
+    .item__simple__text {
+        padding-left: 125px;
+    }/*.item__simple__text*/
+    .item__simple__category {
+        display: inline-block;
+        background: $instituciones;
+        color: white;
+        padding: 0 15px;
+        height: 26px;
+        line-height: cr(26px);
+        @include font-size(14px);
+        font-family: source;
+        margin-bottom: 5px;
+    }/*.item__simple__category*/
+    .item__simple__title {
+        @include font-size(20px);
+        line-height: cr(24px);
+        margin-bottom: 10px;
+        font-family: 'Abel', sans-serif;
+        letter-spacing: 0.8px;
+    }/*.item__single__title*/
+    .btn {
+        width: auto;
+        display: inline-block;
+        color: $principal;
+        margin-top: 10px;
+    }/*.btn*/
+}/*.item__simple*/

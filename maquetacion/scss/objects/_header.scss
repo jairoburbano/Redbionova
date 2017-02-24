@@ -1,0 +1,469 @@
+/*------------------------------------*\
+$HEADER
+\*------------------------------------*/
+.header {
+    width: 100%;
+    display: block;
+    position: relative;
+    background: white;
+    &::after {
+        content: '';
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        background-color: transparent;
+        z-index: $level2;
+    }
+}
+/*Menu superior*/
+.top-nav {
+    position: relative;
+    z-index: $level5;
+    background: white;
+    @include respond-to(tablet) {
+        height: 110px;
+    }
+    &::before {
+        content: '';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background: rgba(0,0,0,0.1);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+    }
+    .logo {
+        width: (160px+8*2);
+        padding: 12px 8px;
+        float: left;
+        @include respond-to(tablet) {
+            width: 310px;
+            height: 63px;
+            margin-top: 14px;
+        }
+        svg {
+            height: 30px;
+            @include less-than(tablet) {
+                .texto-logo {
+                    display: none;
+                }
+            }
+            @include respond-to(tablet) {
+                height: 63px;
+            }
+        }
+        span {
+            font-size: 10px;
+            text-transform: uppercase;
+            text-align: right;
+            width: 100%;
+            display: block;
+            padding-right: 25px;
+            margin-top: 5px;
+            color: $secundario;
+            @include less-than(desktop) {
+                padding-right: 0;
+            }
+            @include less-than(tablet) {
+                display: none;
+            }
+        }
+    }
+    /*Menu derecho, newsletter y logos empresas*/
+    &--right {
+        float: right;
+        text-align: right;
+        .newsletter {
+            text-transform: uppercase;
+            font-size: cr(10px);
+            display: none;
+            color: $principal;
+            text-align: right;
+            margin-top: 10px;
+            float: right;
+        }
+        .icon--news {
+            width: 16px;
+            height: 11px;
+            float: right;
+            display: block;
+            margin-left: 5px;
+            display: none;
+            @include respond-to(desktop) {
+                margin-top: 15px;
+                display: block;
+            }
+        }
+    }
+    /*Logos de otras empresas*/
+    &--sponsor {
+        display: none;
+        float: right;
+        margin-top: 20px;
+        a, img {
+            width: auto;
+            max-height: 40px;
+            display: inline-block;
+        }
+    }
+    @include respond-to(desktop) {
+        &::before {
+            display: none;
+        }
+        .logo {
+            width: 315px;
+            padding: 26px 0px;
+            margin-top: 0;
+            svg {
+                width: 100%;
+                height: 70px;
+            }
+        }
+        &--right {
+            .newsletter {
+                display: block;
+            }
+        }
+        &--sponsor {
+            display: block;
+        }
+    }
+}
+/*Icono mobile*/
+.icon--mobile {
+    width: 24px;
+    height: 21px;
+    position: absolute;
+    top: 17px;
+    right: 19px;
+    z-index: $level7;
+    cursor: pointer;
+    /*se convierte en el icono X para cerrar el menu*/
+    @include respond-to(tablet) {
+        width: 46px;
+        height: 38px;
+        padding-top: 20px;
+    }
+    &.open-menu {
+        .bar {
+            transform: rotate(-45deg);
+            transform-origin: 22px 6px;
+            @include respond-to(tablet) {
+                transform-origin: 40px 16px;
+            }
+            &__two, &__three {
+                transform: rotate(45deg);
+                transform-origin: 18px -2px;
+                @include respond-to(tablet) {
+                    transform-origin: 26px -5px;
+                }
+            }
+            &__two {
+                top: 7px;
+            }
+            &__three {
+                @include respond-to(tablet) {
+                    top: -7px;
+                }
+            }
+        }
+    }
+    /*Cambio zindex cuando se abre buscador*/
+    &.back-off {
+        z-index: $level5;
+    }
+    /*lineas menu que se trasnforman*/
+    .bar {
+        width: 100%;
+        height: 3px;
+        background: #443922;
+        margin-bottom: 4px;
+        display: block;
+        position: relative;
+        transition: all 300ms;
+        @include respond-to(tablet) {
+            height: 6px;
+            margin-bottom: 8px;
+        }
+        &__two {
+            background: #327220;
+            top: 0;
+        }
+        &__three {
+            background: #86ab64;
+        }
+    }
+    @include respond-to(desktop) {
+        display: none !important;
+    }
+}
+/*Menu + buscador*/
+.nav-bar {
+    @include respond-to(desktop) {
+        padding-top: 15px;
+        background: white;
+        position: relative;
+    }
+    /*Menu navegación*/
+    &__mobile {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 65px;
+        background: white;
+        display: none;
+        z-index: $level4;
+        overflow-y: auto;
+        @include respond-to(tablet) {
+            padding-top: 140px;
+        }
+        @include respond-to(desktop) {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block !important;
+            padding-top: 0;
+        }
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 900px;
+        position: relative;
+        left: 0;
+        transition: all 500ms;
+        @include respond-to(tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 55px;
+        }
+        @include respond-to(desktop) {
+            padding: 0;
+        }
+        &.move-left {
+            left: -200px;
+            overflow: hidden;
+        }
+        a {
+            display: block;
+            height: 34px;
+            line-height: cr(34px);
+            margin: 5px 0;
+            padding-left: 30px;
+            position: relative;
+            text-transform: uppercase;
+            color: $principal;
+            font-family: 'Abel', sans-serif;
+            letter-spacing: 0.8px;
+            font-weight: bold;
+            font-size: cr(18px);
+            transition: all 300ms;
+            @include respond-to(tablet) {
+                flex: 2 0 50%;
+                margin: 10px 0 30px 0;
+                font-size: cr(30px);
+                text-transform: none;
+            }
+            @include respond-to(desktop) {
+                flex: auto;
+                padding: 0;
+                font-size: cr(14px);
+                margin: 0;
+                text-align: center;
+                text-transform: uppercase;
+                &:hover {
+                    color: white;
+                }
+            }
+            &::before {
+                content: '';
+                width: 90%;
+                height: 1px;
+                background: $separador;
+                position: absolute;
+                bottom: 0;
+                left: 5%;
+                opacity: .5;
+                @include respond-to(tablet) {
+                    display: none;
+                }
+            }
+            &:last-child{
+                @include respond-to(tablet) {
+                    display: none;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+            @each $category, $color in $categories {
+                &.#{$category} {
+                    &::after {
+                        content: '';
+                        width: 5px;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: $color;
+                        @include respond-to(desktop) {
+                            display: none;
+                        }
+                    }
+                    @include respond-to(desktop) {
+                        &:hover, &.current-menu-item, &.current-page-ancestor {
+                            background: $color;
+                            color: white;
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*Buscador*/
+.search-form {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    padding: 10px 60px 0 10px;
+    z-index: $level6;
+    transition: all 300ms;
+    @include respond-to(tablet) {
+        width: 120px;
+        height: 110px;
+    }
+    @include respond-to(desktop) {
+        right: 0;
+        bottom: 5px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        top: auto;
+    }
+    &.open-box {
+        width: 100%;
+        background: white;
+        z-index: $level7; 
+        @include respond-to(desktop) {
+            width: 200px;
+        }
+        .input-group {
+            width: 100%;
+            display: block;
+        }
+        .search-group {
+            input {
+                z-index: 2;
+            }
+            .icon {
+                z-index: 1;
+                svg {
+                    fill: #327220;
+                }
+            }
+        }
+        .icon--close {
+            opacity: 1;
+        }
+    }
+    .input-group {
+        width: 0;
+        height: 30px;
+        display: none;
+        @include respond-to(tablet) {
+            height: 40px;
+            margin-top: 24px;
+        }
+        @include respond-to(desktop) {
+            height: 30px;
+            margin-top: 0;
+        }
+        input {
+            background: $separador;
+            border-radius: 5px;
+            font-family: 'Abel', sans-serif;
+            font-weight: bold;
+            padding: 0;
+            transition: all 300ms;
+            border-radius: 5px;
+            padding: 0 40px 0 10px;
+            @include respond-to(tablet) {
+                padding: 0 60px 0 10px;
+            }
+            @include respond-to(desktop) {
+                padding: 0 30px 0 10px;
+            }
+        }
+    } 
+    .search-group {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        @include respond-to(tablet) {
+            right: 80px;
+            top: 40px;
+        }
+        @include respond-to(desktop) {
+            right: 0;
+            top: 0;
+        }
+        input {
+            position: relative;
+            z-index: 1;
+            background-color: transparent;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            padding: 6.5px;
+            @include respond-to(tablet) {
+                padding: 0;
+            }
+            @include respond-to(desktop) {
+                padding: 6.5px;
+            }
+        }
+    }
+    .icon--close {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        opacity: 0;
+        transition: all 300ms;
+        cursor: pointer;
+        @include respond-to(tablet) {
+            width: 20px;
+            height: 20px;
+            top: 45px;
+        }
+        @include respond-to(desktop) {
+            width: 16px;
+            height: 16px;
+            top: 7px;
+            right: -24px;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+/*------------------------------------*\
+$LIGHTBOX
+\*------------------------------------*/
+.opac {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(#000, .5);
+    top: 0;
+    left: 0;
+    z-index: $level10;
+    display: none;
+}
+.js-lightbox {
+    display: none;
+}
+.lightbox {
+    &.lightbox__empleo {
+        width: auto;
+        width: 90%;
+        height: 375px;
+        position: fixed;
+        z-index: $level11;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: row wrap;
+        @include respond-to(desktop) {
+            width: 830px;
+            max-width: 100%;
+        }
+        .lightbox__image {
+            width: 344px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            @include less-than(tablet) {
+                width: 100%;
+                height: 127px;
+            }
+            &::before {
+                content: '';
+                background: rgba(#000, .5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: $level1;
+            }
+            p {
+                @include center;
+                @include font-size(30px);
+                line-height: cr(30px);
+                color: white;
+                z-index: $level2;
+                width: 270px;
+                text-align: center;
+                font-family: 'Abel', sans-serif;
+                letter-spacing: 0.8px;
+            }
+            .lightbox__close {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 10px;
+                left: 10px;
+                z-index: $level3;
+                cursor: pointer;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }/*.lightbox__close*/
+        }/*.lightbox__image*/
+        .lightbox__content {
+            width: 486px;
+            background: white;
+            padding: 30px 20px 60px 35px;
+            @include less-than(tablet) {
+                width: 100%;
+            }
+            .lightbox__logo {
+                width: 200px;
+                height: 30px;
+                margin: 0 auto 65px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .formulario {
+                padding: 0;
+                margin-bottom: 40px;
+                .formulario__item {
+                    padding: 0;
+                    .input-group {
+                        width: 100%;
+                        @include font-size(16px);
+                        padding: 0;
+                        margin-bottom: 10px;
+                    }
+                    .send-group {
+                        width: 100%;
+                        input {
+                            width: 100px;
+                            float: right;
+                            border: 2px solid #443922;
+                            line-height: 2rem;
+                            border-radius: 5px;
+                            overflow: hidden;
+                            height: 36px;
+                            text-align: center;
+                            background-color: transparent;
+                            padding: 0 15px;
+                            margin: auto;
+                            display: block;
+                            transition: all 300ms;
+                            font-size: 0.875rem;
+                            &:hover {
+                                background: #443922;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+            .lightbox__bajada {
+                color: $secundario;
+                @include font-size(14px);
+                text-align: center;
+            }
+        }/*.lightbox__content*/
+        .newsletter-form {
+
+        }/*.newsletter-form*/
+    }/*&.lightbox__empleo*/
+}/*.lightbox*/

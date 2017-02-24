@@ -1,0 +1,237 @@
+/*------------------------------------*\
+$COLORS
+\*------------------------------------*/
+body {
+    background: $claro;
+    /*Colores gradiente bajo header*/
+    &.noticias, &.novedades, &.single-format-standard {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $noticias 0%, $nosotros 100%);
+            }
+        }
+    }
+    &.nosotros {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $nosotros 0%, $financiamiento 100%);
+            }
+        }
+    }
+    &.financiamiento, &.fondos-concursables, &.becas {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $financiamiento 0%, $empleo 100%);
+            }
+        }
+    }
+    &.empleo, &.tesis, &.ofertas-laborales {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $empleo 0%, $biotech-tonic 100%);
+            }
+        }
+    }
+    &.biotech-tonic, &.eventos-biotech-tonic, &.page-template-template-listados-biotech-tonic {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $biotech-tonic 0%, $instituciones 100%);
+            }
+        }
+    }
+    &.instituciones {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $instituciones 0%, $ciencia-made-in-chile 100%);
+            }
+        }
+    }
+    &.ciencia-made-in-chile, &.page-template-template-listados-ciencia-made-in-chile, &.parent-pageid-21, &.biovoces, &.perfiles, &.autor {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $ciencia-made-in-chile 0%, $eventos 100%);
+            }
+        }
+    }
+    &.eventos, &.tax-evento {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $eventos 0%, $contacto 100%);
+            }
+        }
+    }
+    &.contacto {
+        .header {
+            &::after {
+                background: linear-gradient(to right, $contacto 0%, $noticias 100%);
+            }
+        }
+    }
+    @each $category, $color in $categories {
+        &.#{$category} {
+            .bubbles {
+                span {
+                    background: $color;
+                }
+            }
+            .content {
+                h1, h2, h3, h4, h5, h6 {
+                    color: $color;
+                }
+            }
+            .section-title {
+                &::after {
+                    background: $color;
+                }    
+            }
+            .content-filters {
+                .select-filters {
+                    &.color {
+                        color: $color;
+                        svg {
+                            fill: $color;
+                        }
+                    }
+                }/*.select-filters*/
+                .filters {
+                    .filters__item {
+                        &:hover, &.active {
+                            color: $color;
+                            a {
+                                color: $color;
+                            }
+                        }
+                        &::before {
+                            background: $color;
+                        }
+                    }
+                }/*.filters*/
+                .filter-by {
+                    .filter-by__item {
+                        color: $color;
+                    }
+                }
+            }/*.content-filters*/
+            .small-items {
+                .small-items__item {
+                    .small-items__item__days {
+                        background: $color;
+                    }/*.small-items__item__days*/
+                }/*.small-items__item*/
+            }/*.small-items*/
+            .events__item--border {
+                border: 2px solid $color;
+            }/*events__item--border*/
+            .events__item__date--start, .events__item__date--end, .events__item__date--single, .events__item__date--year {
+                background: $color;
+            }
+            .events__title {
+                color: $principal;
+                a {
+                    color: $principal;
+                    transition: all 300ms;
+                    &:hover {
+                        color: $color;
+                    }
+                }
+            }
+            .events__single__info {
+                border: 1px solid $color;
+                p {
+                    color: $color;
+                }
+            }
+            blockquote {
+                color: $color;
+            }
+            .formulario__item {
+                @include respond-to(tablet) {
+                    border: 1px solid $color;
+                }
+            }
+            .more-items .more-items__item .more-items__item__category {
+                background: $color;
+            }
+            .related-list .small-items .small-items__item__content.small-items__item--block .small-items__item .small-items__item__title {
+                &:hover {
+                    color: $color;
+                }
+            }
+            .related {
+                h2 {
+                    color: $color;
+                    a {
+                        color: $principal;
+                        &:hover {
+                            color: $color;
+                        }
+                    }
+                }
+            }
+            .content-filters {
+                &.content--always {
+                    .filters {
+                        @include respond-to(tablet) {
+                            border-bottom: 2px solid $color;
+                            border-right: 2px solid $color;
+                            border-left: 2px solid $color;
+                        }
+                    }
+                }
+                .select-filters {
+                    border: 2px solid $color;
+                    &::after {
+                        background: $color;
+                    }
+                    svg {
+                        fill: $color;
+                    }
+                }
+                .filters {
+                    @include less-than(tablet) {
+                        border-bottom: 2px solid $color;
+                        border-right: 2px solid $color;
+                        border-left: 2px solid $color;
+                    }
+                }
+            }
+        }/*&.#{$category}*/
+    }/*@each $category, $color in $categories*/
+}/*body*/
+.item {
+    /*Colores al final para reemplazar por sección*/
+    @each $category, $color in $categories {
+        &.#{$category} {
+            .item__category {
+                border-bottom-color: $color;
+                a, span {
+                    background: $color;
+                }
+            }/*.item__category*/
+            .item__calendar {
+                background: $color;
+            }/*.item__calendar*/
+            .item__image {
+                &::before {
+                    background: $color;
+                }
+            }/*.item__image*/
+            .item__box__title {
+                color: $color;
+            }/*.item__box__title*/
+            &:hover {
+                .item__title {
+                    color: $color;
+                }/*.item__title*/
+                .item__image {
+                    &::before {
+                        opacity: .5;
+                    }
+                    &::after {
+                        opacity: 1;
+                    }
+                }/*.item__image*/
+            }/*&:hover*/
+        }/*&.#{$category}*/
+    }/*@each $category, $color in $categories*/
+}/*.item*/

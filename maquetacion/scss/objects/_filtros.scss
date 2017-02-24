@@ -1,0 +1,211 @@
+/*------------------------------------*\
+$FILTROS
+\*------------------------------------*/
+/*filtros*/
+.content-filters {
+    position: relative;
+    padding-top: 20px;
+    @include respond-to(tablet) {
+        padding-top: 0;
+    }
+    &.filter--hidden {
+        display: none;
+    }
+    &.content--always {
+        max-width: 500px;
+        margin: auto;
+        .select-filters {
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+        .filters {
+            @include respond-to(tablet) {
+                flex-flow: row wrap;
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 39px;
+            }
+            .filters__item {
+                @include respond-to(tablet) {
+                    width: 100%;
+                    background: white;
+                }
+                &:hover {
+                    @include respond-to(tablet) {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                &.active {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .filter-by {
+            opacity: 0;
+        }
+    }
+    &.filter--section {
+        margin-top: 30px;
+        .select-filters {
+            margin-bottom: 0;
+        }
+        .filters {
+            @include respond-to(tablet) {
+                padding-bottom: 20px;
+            }
+            .filters__item {
+                @include respond-to(tablet) {
+                    @include font-size(30px);
+                    line-height: cr(30px);
+                    opacity: .5;
+                }
+                &:hover, &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .filters__text {
+        color: $secundario;
+        @include font-size(14px);
+        line-height: cr(22px);
+        position: absolute;
+        top: 0px;
+        left: 5px;
+    }/*.filters__text*/
+    .select-filters {
+        background: white;
+        height: 39px;
+        line-height: cr(37px);
+        padding: 0 15px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 300ms;
+        color: $secundario;
+        position: relative;
+        font-family: 'Abel', sans-serif;
+        letter-spacing: 0.8px;
+        font-weight: bold;
+        &::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            right: 40px;
+            top: 0;
+        }
+        @include respond-to(tablet) {
+            display: none;
+        }
+        svg {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translate(0,-50%);
+            width: 10px;
+            height: 10px;
+        }
+    }
+    .filters {
+        position: absolute;
+        left: 0;
+        top: 59px;
+        display: none;
+        z-index: $level3;
+        width: 100%;
+        @include respond-to(tablet) {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            position: relative;
+            top: auto;
+            left: auto;
+            border-bottom: 1px solid $gray;
+            margin-bottom: 20px;
+        }
+        @include respond-to(desktop) {
+            max-width: 750px;
+            margin: 0 auto 20px;
+        }
+        .filters__item {
+            width: 100%;
+            cursor: pointer;
+            height: 39px;
+            background: white;
+            line-height: cr(37px);
+            padding: 0 15px;
+            position: relative;
+            transition: all 300ms;
+            font-family: 'Abel', sans-serif;
+            letter-spacing: 0.8px;
+            font-weight: bold;
+            color: $secundario;
+            a {
+                color: $principal;
+                transition: all 300ms;
+            }
+            &:hover, &.active {
+                &::before {
+                    @include respond-to(tablet) {
+                        opacity: 1;
+                    }
+                }
+            }
+            @include respond-to(tablet) {
+                width: auto;
+                @include font-size(12px);
+                background-color: transparent;
+                border: none;
+                color: $secundario;
+            }
+            @include respond-to(desktop) {
+                @include font-size(16px);
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                width: 40%;
+                height: 4px;
+                transform: translate(-50%,0);
+                opacity: 0;
+                transition: all 300ms;
+            }
+        }
+    }/*.filters*/
+    .filter-by {
+        display: none;
+        text-align: center;
+        margin-bottom: 40px;
+        @include respond-to(tablet) {
+            display: block;
+        }
+        p {
+            display: inline-block;
+        }
+        .filter-by__item {
+            opacity: 0;
+            position: relative;
+            width: auto;
+            padding: 0 15px 0 10px;
+            transition: all 300ms;
+            &.show {
+                opacity: 1;
+            }
+            svg {
+                width: 8px;
+                height: 8px;
+                position: absolute;
+                top: -4px;
+                right: -4px;
+            }
+        }
+    }/*.filter-by*/
+}/*.content-filters*/

@@ -1,0 +1,133 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+    font-family: 'Varela Round', sans-serif;
+    color: $principal;
+    @include font-size(16px);
+    line-height: cr(22px);
+    color: $principal;
+}
+.fix-footer {
+    min-height: 100%;
+    padding-bottom: 267px;
+    @include respond-to(tablet) {
+        padding-bottom: 200px;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+}
+/*Titulo principal, tiene una linea del color de la seccion*/
+.section-title {
+    color: $principal;
+    @include font-size(30px);
+    line-height: cr(30px);
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    @include respond-to(tablet) {
+        padding-top: 40px;
+        @include font-size(35px);
+        line-height: cr(35px);
+    }
+    @include respond-to(desktop) {
+        padding-top: 60px;
+        @include font-size(40px);
+        line-height: cr(40px);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 70px;
+        height: 4px;
+        transform: translate(-50%,0);
+    }
+}
+/*Titulo secundario*/
+h2 {
+    padding: 0 0 15px 0;
+    @include font-size(24px);
+    line-height: cr(30px);
+    @include respond-to(tablet) {
+        @include font-size(30px);
+    }
+}
+.content {
+    h2 {
+        @include respond-to(tablet) {
+            @include font-size(22px);
+        }
+    }
+    h3 {
+        font-size: cr(20px);
+    }
+}
+h3 {
+    padding: 0 0 20px 0;
+    @include font-size(22px);
+    line-height: cr(28px);
+}
+.no-scroll {
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+/*imagenes wordpress*/
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin: 15px auto;}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin: 15px auto;}
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: $secundario;
+    transition: all 300ms;
+}
+/*Clases por resolucion*/
+.no-desk {
+    display: block;
+    @include respond-to(desktop) {
+        display: none !important;
+    }
+}
+.only-mobile {
+    display: block;
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+.text-center {
+    text-align: center;
+}
+blockquote {
+    @include font-size(22px);
+    line-height: cr(30px);
+    margin-bottom: 20px;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+}
+.mbot {
+    margin-bottom: 30px;
+}
+.mbot--small {
+    margin-bottom: 20px;
+}
+/*fondo $claro*/
+.bg-content {
+    position: relative;
+}
+.bg-white {
+    background: white;
+}/*.bg-white*/

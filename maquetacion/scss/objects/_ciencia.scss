@@ -1,0 +1,84 @@
+/*------------------------------------*\
+$CIENCIA
+\*------------------------------------*/
+.article__img {
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+    }
+}
+.related__author {
+    display: block;
+    margin-top: 30px;
+    padding: 0;
+    @include respond-to(desktop) {
+        margin-top: 0;
+        padding: 0 45px 0 0;
+    }
+    h2 {
+        text-align: center;
+        width: 100%;
+        @include respond-to(desktop) {
+            text-align: left;
+        }
+        a {
+            color: $ciencia-made-in-chile;
+            @include font-size(18px);
+            padding-bottom: 10px;
+            transition: all 300ms;
+        }
+    }
+    .related__item--author {
+        .author__image {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            overflow: hidden;
+            margin: 0 auto 10px;
+            @include respond-to(desktop) {
+                margin: 0 0 10px;
+            }
+            a {
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .author__text {
+            .author__title {
+            }
+            .author__position {
+                @include font-size(14px);                
+                margin-bottom: 20px;
+                @include respond-to(desktop) {
+                    padding-right: 100px;
+                }
+            }
+            .author__desc {
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid $separador;
+                p {
+                    @include font-size(12px);
+                    font-weight: 300;
+                    color: rgba($principal, .7);
+                }
+            }
+        }
+    }
+    .related__item {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $separador;
+        display: none;
+        @include respond-to(desktop) {
+            display: block;
+        }
+        .related__item__text {
+            .related__item__text__title {
+                padding-top: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+/*------------------------------------*\
+$SOCIAL
+\*------------------------------------*/
+.social-plugin {
+    display: none;
+    @include respond-to(tablet) {
+        display: flex;
+        background: white;
+    }
+    @include respond-to(desktop) {
+        background-color: transparent;
+    }
+    .social-plugin__item {
+        flex: 1;
+    }
+}
+/*Twitter*/
+.twitter-plugin {
+    padding-right: 35px;
+    .twitter-plugin__item {
+        width: 100%;
+        max-width: 500px;
+        clear: both;
+        display: block;
+        position: relative;
+        min-height: 80px;
+        font-size: cr(14px);
+        line-height: cr(22px);
+        margin-bottom: 35px;
+    }
+    .twitter-plugin__item__image {
+        width: 73px;
+        height: 73px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        border: 1px solid $secundario;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .twitter-plugin__item__text {
+        padding-left: 100px;
+        .tweet-title {
+            font-weight: bold;
+        }
+        .tweet-content {
+            color: $secundario;
+        }
+        a {
+            color: $corporativo;
+        }
+    }
+}
+/*Facebook*/
+.facebook-plugin {
+    padding-left: 35px;
+}

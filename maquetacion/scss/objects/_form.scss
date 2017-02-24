@@ -1,0 +1,321 @@
+/*------------------------------------*\
+$FORM
+\*------------------------------------*/
+input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.formulario {
+    padding: 40px 15px 30px;
+    background: white;
+    @include respond-to(tablet) {
+        max-width: 650px;
+        margin: auto;
+        padding: 40px 0 30px;
+        background-color: transparent;
+    }
+    @include respond-to(desktop) {
+        max-width: 830px;
+    }
+    &.fomulario__contact {
+        background-color: transparent;
+        @include less-than(tablet) {
+            padding-top: 0;
+            h2 {
+                padding: 0;
+            }
+        }
+        @include respond-to(tablet) {
+            background: white;
+            margin: 30px auto;
+        }
+        @include respond-to(desktop) {
+            position: relative;
+            top: -200px;
+            z-index: $level5;
+            margin: 0 auto;
+        }
+        h2 {
+            @include respond-to(tablet) {
+                @include font-size(22px);
+                line-height: cr(30px);
+                text-align: left;
+                width: 100%;
+                color: $corporativo;
+                max-width: 100%;
+                padding-left: 50px;
+                padding-bottom: 0;
+            }
+        }
+        .formulario__item {
+            padding-top: 30px;
+            border: none;
+        }
+    }
+    h2 {
+        @include respond-to(tablet) {
+            max-width: 500px;
+            margin: auto;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        @include respond-to(desktop) {
+            max-width: 350px;
+        }
+    }
+    /*Fomrulario Postulante*/
+    &.fomulario__postulate {
+        background: white;
+        border: 1px solid $empleo;
+        padding: 10px 15px;
+        @include respond-to(desktop) {
+            max-width: 680px;
+        }
+        .formulario__box {
+            padding: 0;
+            &::after {
+                content: '';
+                display: block;
+                float: none;
+                clear: both;
+            }
+            &.formulario__box--padding {
+                .formulario__box__text {
+                    padding-bottom: 30px;
+                }
+            }
+            .formulario__box__text {
+                color: $empleo;
+                @include font-size(16px);
+                line-height: cr(20px);
+                text-align: center;
+                padding-bottom: 0;
+                transition: all 300ms;
+                @include respond-to(tablet) {
+                    text-align: left;
+                    float: left;
+                    width: auto;
+                    max-width: calc(100% - 140px);
+                    line-height: cr(31px);
+                    padding-bottom: 0;
+                }
+            }/*.formulario__box__text*/
+            .btn {
+                float: right;
+                border-color: $empleo;
+                color: $empleo;
+                &.nope {
+                    border-color: $gray;
+                    color: $gray;
+                    &:hover {
+                        background: transparent;
+                        color: $gray;
+                    }
+                }
+                &:hover {
+                    background: $empleo;
+                    color: white;
+                }
+            }
+        }/*.formulario__box*/
+        .js-formulario__item {
+            display: none;
+            width: 100%;
+        }/*.js-formulario__item*/
+        .formulario__item {
+            width: 100%;
+            padding-top: 0;
+            @include respond-to(desktop) {
+                border: none;
+            }
+            .input-group {
+                @include respond-to(desktop) {
+                    padding: 0 10px;
+                }
+                span.validate {
+                    @include respond-to(desktop) {
+                        padding-right: 15px;
+                    }
+                }
+            }/*.input-group*/
+        }/*.formulario__item*/
+    }/*.fomulario__postulate*/
+    .formulario__item {
+        display: flex;
+        flex-flow: row wrap;
+        @include respond-to(tablet) {
+            background: white;
+            padding: 40px 18px 20px;
+        }
+        &.no-border {
+            border: none;
+        }
+        .input-group {
+            position: relative;
+            @include font-size(14px);
+            margin-bottom: 20px;
+            width: 100%;
+            @include respond-to(tablet) {
+                margin-bottom: 25px;
+                width: 50%;
+                padding: 0 12px;
+                &.full-size {
+                    width: 100%;
+                }
+            }
+            @include respond-to(desktop) {
+                padding: 0 30px;
+            }
+            label {
+                font-family: 'Abel', sans-serif;
+                letter-spacing: 0.8px;
+                @include font-size(16px);
+                line-height: cr(20px);
+                @include less-than(tablet) {
+                    padding: 0 15px;
+                }
+                &.hide-text {
+                    color: white;
+                }
+            }
+            input, select, textarea {
+                height: 38px;
+                line-height: cr(38px);
+                @include font-size(16px);
+                line-height: cr(16px);
+                padding: 0 15px;
+                transition: all 300ms;
+                border-radius: 5px;
+                border: 1px solid #999;
+                background-color: transparent;
+                &:focus {
+                    outline: none;
+                }
+                &:active, &:focus {
+                    box-shadow: 0px 0px 10px 3px rgba(173, 173, 173, 0.5);
+                    border: none;
+                }
+            }/*input*/
+            textarea {
+                width: 100%;
+                height: 100px;
+                display: block;
+                resize: none;
+                padding: 10px;
+            }
+            /*Input file*/
+            .custom-file-input {
+                padding: 0;
+                border: none;
+                color: $secundario;
+                padding: 10px 0 0 30px;
+                @include font-size(14px);
+            }
+            .custom-file-input::-webkit-file-upload-button {
+                visibility: hidden;
+            }
+            .custom-file-input::before {
+                content: 'Adjunta tu CV';
+                display: inline-block;
+                background-color: transparent;
+                border: 2px solid $principal;
+                border-radius: 5px;
+                outline: none;
+                white-space: nowrap;
+                -webkit-user-select: none;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 10pt;
+                height: 31px;
+                width: 120px;
+                text-align: center;
+                line-height: cr(31px);
+                color: $principal;
+                margin: -6px 0 0 -30px;
+            }
+            .custom-file-input:hover::before {
+                border-color: black;
+            }
+            .custom-file-input:active::before {
+                background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+            }
+            /*Termina input file*/
+            span.validate, .msg-error {
+                position: absolute;
+                bottom: -22px;
+                left: 0;
+                width: 100%;
+                text-align: right;
+                padding-right: 5px;
+                display: none;
+                @include respond-to(tablet) {
+                    padding-right: 17px;
+                }
+                @include respond-to(desktop) {
+                    padding-right: 35px;
+                }
+            }/*span.error*/
+            &.error {
+                span.validate {
+                    display: block;
+                }
+                input, textarea {
+                    border: 2px solid #9C282A;
+                    background: $claro;
+                }
+                select {
+                    border: 2px solid #9C282A;
+                }
+                .style-select {
+                    background: $claro;
+                }
+            }/*.error*/
+        }/*.input-group*/
+        .style-select {
+            position: relative;
+            &.msg-error {
+                padding: 0;
+                position: relative;
+                display: block;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                .msg-error {
+                    padding: 0;
+                }
+            }
+            svg {
+                fill: principal;
+                position: absolute;
+                right: 10px;
+                top: 15px;
+                width: 8px;
+                height: 8px;
+                z-index: $level1;
+            }
+            select {
+                @include font-size(14px);
+                width: 100%;
+                outline:none;
+                display: inline-block;
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                appearance:none;
+                cursor:pointer;
+                position: relative;
+                z-index: $level2;
+            }
+        }
+        .send {
+            width: 85px;
+            margin-right: 0;
+            @include respond-to(tablet) {
+                margin: auto
+            }
+            @include respond-to(desktop) {
+                margin-right: 30px;
+            }
+        }/*.send*/
+    }/*.formulario__item*/
+}/*.formulario*/

@@ -1,0 +1,71 @@
+/*------------------------------------*\
+$PUBLICIDAD
+\*------------------------------------*/
+.publicidad1-1 {
+    width: 234px;
+    height: 60px;
+    margin: 0 auto 30px auto;
+    display: block;
+    img, a {
+        width: 100%;
+        height: 100%;
+        background: $claro;
+        display: block;
+    }
+    @include respond-to(tablet) {
+        display: none;
+    }
+}/*.publicidad1-1*/
+.publicidad1-2 {
+    width: 468px;
+    height: 60px;
+    margin: 0 auto 30px auto;
+    display: block;
+    display: none;
+    &.size1-1 {
+        float: left;
+        margin: 0;
+        width: 234px;
+        height: 60px;
+    }
+    img, a {
+        width: 100%;
+        height: 100%;
+        background: $claro;
+        display: block;
+    }
+    @include respond-to(tablet){
+        display: block;
+    }
+    @include respond-to(desktop){
+        display: none;
+    }
+}/*.publicidad1-2*/
+.publicidad1-3 {
+    position: relative;
+    width: 290px;
+    padding: 70px 0 0 50px;
+    height: 470px;
+    display: none;
+    @include respond-to(desktop) {
+        display: block;
+    }
+    &.size1-2 {
+        width: 468px;
+        height: 60px;
+        margin: 30px auto;
+        padding: 0;
+    }
+    &.size1-4 {
+        width: 300px;
+        height: 250px;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+    &.size1-5 {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+}/*.publicidad1-3*/

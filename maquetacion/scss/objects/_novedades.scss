@@ -1,0 +1,95 @@
+/*------------------------------------*\
+$NOVEDADES
+\*------------------------------------*/
+.content-grid {
+    .type-1 {
+        @include respond-to(tablet) {
+            width: 50%;
+            padding: 0 10px 0 0;
+            margin-bottom: 20px;
+        }
+        &:nth-child(2n) {
+            @include respond-to(tablet) {
+                padding: 0 0 0 10px;
+            }
+        }
+        .item__text {
+            @include respond-to(tablet) {
+                margin-top: 0;
+                width: 100%;
+            }
+        }
+        .item__description {
+            display: block;
+        }
+        .item__image {
+            overflow: hidden;
+            height: 180px;
+            @include respond-to(tablet) {
+                height: 220px;
+            }
+            @include respond-to(desktop) {
+                height: 380px;
+            }
+            img {
+                min-height: 100%;
+            }
+        }
+    }
+}
+.comments {
+    padding-bottom: 30px;
+    &.comments--empleo {
+        padding-top: 30px;
+    }
+    h2 {
+        text-align: center;
+        width: 200px;
+        margin: auto;
+        @include respond-to(tablet) {
+            width: 100%;
+            text-align: left;
+        }
+    }
+}/*.comments*/
+/*Single noticias*/
+.block {
+    &.single__block {
+        text-align: left;
+        @include font-size(14px);
+        max-width: 100%;
+        padding: 0;
+        img {
+            margin: 15px 0;
+            width: 100%;
+        }
+        .single__block__category {
+            margin-bottom: 0;
+            color: $secundario;
+            a {
+                color: white;
+                height: 26px;
+                padding: 0 10px;
+                line-height: 1.625rem;
+                background: #4BAE4E;
+                width: auto;
+                display: inline-block;
+            }
+        }
+        h2 {
+            @include respond-to(tablet) {
+                padding-right: 100px;
+            }
+        }
+        .content { 
+            @include respond-to(tablet) {
+                max-width: 560px;
+            }
+            &.content__big {
+                @include respond-to(tablet) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }/*.single__block*/
+}/*.block*/

@@ -1,0 +1,26 @@
+{
+  "name": "redbionova",
+  "version": "1.0.0",
+  "authors": [
+    "Agencia Digital Reactor <contacto@reactor.cl>"
+  ],
+  "description": "Descripción del tema",
+  "keywords": [
+    ""
+  ],
+  "license": "",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexslider": "~2.5.0",
+    "imagesloaded": "~3.1.8",
+    "isotope": "~2.2.2"
+  }
+}

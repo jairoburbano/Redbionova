@@ -1,0 +1,77 @@
+/*------------------------------------*\
+$SETTINGS
+\*------------------------------------*/
+@function color($name, $palette) {
+    @return map-get($palette, $name);
+}
+/* ============== // Transition // ============== */
+
+$transition-time: .3s;
+$transition-method: ease-in-out;
+
+
+/* ============== // FONTS // ============== */
+@font-face {
+    font-family: source;
+    src: url(../fonts/SourceSansPro-Regular.otf);
+}
+/* ============== // COLOR // ============== */
+$principal : #443922;
+$separador : #E2E6E7;
+$separador-dark : #666666;
+$claro : #F1F1F1;
+$secundario : #575757;
+$gray : #CCCCCC;
+$corporativo : #0C6A36;
+/*Colores secciones*/
+$noticias : #4BAE4E;
+$novedades : #4BAE4E;
+$nosotros : #CCDB38;
+$financiamiento : #FEBF00;
+$empleo : #FF6600;
+$biotech-tonic : #F44135;
+$instituciones : #9C1AB1;
+$ciencia-made-in-chile : #005AD4;
+$eventos : #00bbd3;
+$contacto : #327220;
+/*Colores redes sociales*/
+$mail : #6D6E71;
+$rss : #FAA21C;
+$twitt : #26A7DF;
+$face : #4D67A4;
+$linkedin : #1884BD;
+$gplus : #D84A36;
+$whatsapp : #4BAE4E;
+/*Colores menus*/
+$categories: (
+    noticias : #4BAE4E,
+    single-format-standard : #4BAE4E,
+    novedades : #4BAE4E,
+    nosotros : #CCDB38,
+    financiamiento : #FEBF00,
+    becas : #FEBF00,
+    fondos-concursables : #FEBF00,
+    empleo : #FF6600,
+    tesis : #FF6600,
+    ofertas-laborales : #FF6600,
+    biotech-tonic : #F44135,
+    eventos-biotech-tonic : #F44135,
+    page-template-template-listados-biotech-tonic : #F44135,
+    instituciones : #9C1AB1,
+    ciencia-made-in-chile : #005AD4,
+    perfiles : #005AD4,
+    parent-pageid-21 : #005AD4,
+    page-template-template-listados-ciencia-made-in-chile : #005AD4,
+    biovoces : #005AD4,
+    autor : #005AD4,
+    eventos : #00bbd3,
+    tax-evento : #00bbd3,
+    contacto : #327220,
+);
+$redes: (
+    icon--mail : #6D6E71,
+    icon--twitt : #26A7DF,
+    icon--face : #4D67A4,
+    icon--linke : #1884BD,
+    icon--whatsapp : #4BAE4E
+);

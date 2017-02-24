@@ -1,0 +1,108 @@
+/*------------------------------------*\
+$MORE ITEMS
+\*------------------------------------*/
+/*More items single noticias*/
+.more-biotech {
+    padding-top: 10px;
+    @include respond-to(tablet) {
+        padding-top: 50px;
+    }
+    h2 {
+        margin-bottom: 60px;
+        @include respond-to(tablet) {
+            margin-bottom: 40px;
+        }
+    }
+}
+.more-items {
+    width: 100%;
+    &.more-items--center {
+        .more-items__item {
+            text-align: center;
+            @include less-than(tablet) {
+                width: calc(100% - 20px);
+                float: left;
+                margin-bottom: 20px;
+                &:nth-child(2) {
+                    float: right;
+                }
+            }
+            &:nth-child(2) {
+                text-align: center;
+                .more-items__item__text {
+                    margin: auto;
+                    float: none;
+                }
+            }
+            .more-items__item__text {
+                max-width: 300px;
+                margin: auto;
+                padding-left: 0;
+                padding-right: 0;
+                @include respond-to(desktop) {
+                    max-width: 350px;
+                }
+            }
+        }
+    }
+    .more-items__item {
+        width: 100%;
+        float: left;
+        text-align: left;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        @include respond-to(tablet) {
+            width: 50%;
+        }
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $principal;
+            opacity: .5;
+            z-index: $level1;
+        }
+        &:nth-child(2) {
+            text-align: right;
+            .more-items__item__text {
+                float: right;
+            }
+        }
+        .more-items__item__text {
+            z-index: $level2;
+            position: relative;
+            padding: 20px 15px;
+            display: block;
+            @include respond-to(tablet) {
+                padding: 50px 15px;
+                max-width: 60%;
+            }
+            @include respond-to(desktop) {
+                padding: 60px 45px;
+            }
+        }/*.more-items__item__text*/
+        .more-items__item__category {
+            margin-bottom: 10px;
+            height: 26px;
+            line-height: cr(26px);
+            padding: 0 15px;
+            color: white;
+            display: inline-block;
+        }/*.more-items__item__category*/
+        .more-items__item__title {
+            @include font-size(16px);
+            line-height: cr(18px);
+            padding-bottom: 0;
+            color: white;
+            display: block;
+            @include respond-to(tablet) {
+                @include font-size(20px);
+                line-height: cr(24px);
+            }
+        }/*.more-items__item__title*/
+    }/*.more-items__item*/
+}/*.more-items*/
